@@ -12,14 +12,22 @@ buildscript {
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'com.matthewprenger:CurseGradle:1.0-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'com.matthewprenger.cursegradle'
+apply plugin: 'maven'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 repositories {
 
     mavenLocal()
+    maven {
+
+        name = "thiakil"
+        url = "http://maven.thiakil.com"
+    }
     maven {
 
         url = "http://dvs1.progwml6.com/files/maven"
@@ -52,8 +60,8 @@ dependencies {
 
     compile "io.github.shadowchild:cybernize2:1.0-SNAPSHOT"
 
+    deobfCompile "com.azanor.baubles:Baubles:1.12-1.5.2"
     deobfCompile "mezz.jei:jei_1.12.2:4.8.5.157"
-
 }
 
 processResources {
