@@ -3,6 +3,7 @@ package io.github.shadowchild.fma;
 
 import io.github.shadowchild.fma.common.Proxy;
 import io.github.shadowchild.fma.utils.Refs;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -17,6 +18,11 @@ public class Fullmetal {
 
     @SidedProxy(clientSide = Refs.CLIENT_PROXY, serverSide = Refs.COMMON_PROXY)
     public static Proxy proxy;
+
+    static {
+
+        FluidRegistry.enableUniversalBucket();
+    }
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e) {
