@@ -2,7 +2,11 @@ package io.github.shadowchild.fma.common;
 
 
 import io.github.shadowchild.fma.content.fluid.FluidBase;
+import io.github.shadowchild.fma.utils.Refs;
 import net.minecraft.item.Item;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -18,6 +22,7 @@ public class Proxy {
 
     public void init(FMLInitializationEvent e) {
 
+        FluidUtil.getFilledBucket(FluidRegistry.getFluidStack("soul", Fluid.BUCKET_VOLUME)).getItem().setCreativeTab(Refs.TAB);
     }
 
     public void postInit(FMLPostInitializationEvent e) {
