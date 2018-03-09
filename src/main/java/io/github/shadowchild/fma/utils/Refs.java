@@ -4,6 +4,7 @@ package io.github.shadowchild.fma.utils;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.Fluid;
 
 public class Refs {
 
@@ -16,6 +17,8 @@ public class Refs {
     public static final String CLIENT_PROXY = "io.github.shadowchild.fma.client.ClientProxy";
 
     public static final CreativeTabs TAB = new FMATab();
+
+    public static final int SOUL_VALUE = Fluid.BUCKET_VOLUME / 16;
 
     private static class FMATab extends CreativeTabs {
 
