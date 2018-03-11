@@ -35,7 +35,7 @@ repositories {
 }
 
 version = "1.0"
-group = "io.github.shadowchild.FMA" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group = "io.github.shadowchild.fma" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "FullmetalAlchemy"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.

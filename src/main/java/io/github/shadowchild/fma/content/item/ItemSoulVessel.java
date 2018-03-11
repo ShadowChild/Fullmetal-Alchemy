@@ -45,7 +45,7 @@ public class ItemSoulVessel extends ItemBase implements IBauble {
 
         NBTTagCompound tag = NBTUtils.getModTagCompound(stack);
         int souls = tag.getInteger(NBTUtils.SOUL_NBT_TAG);
-        tooltip.add("Souls Collected: " + souls);
+        if(souls > 0) tooltip.add("Souls Collected: " + souls);
     }
 
     @Override
