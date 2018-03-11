@@ -9,10 +9,13 @@ import net.minecraft.item.Item;
 
 public class ItemBase extends Item implements IHasModel {
 
-    public ItemBase(String label) {
+    public ItemBase(String label, String registrySubFolder) {
 
         this.setUnlocalizedName(label);
-        this.setRegistryName(label);
+
+        if(!registrySubFolder.isEmpty()) registrySubFolder = registrySubFolder + "/";
+
+        this.setRegistryName(registrySubFolder + label);
         this.setCreativeTab(Refs.TAB);
         ItemsInit.ITEMS.add(this);
     }

@@ -25,7 +25,7 @@ public class EntityKilledHandler {
         Entity source = e.getSource().getTrueSource();
         if(!(source instanceof EntityPlayer)) return;
 
-        int vesselEquipped = BaublesApi.isBaubleEquipped((EntityPlayer)source, ItemsInit.soul_vessel);
+        int vesselEquipped = BaublesApi.isBaubleEquipped((EntityPlayer)source, ItemsInit.vessel_soul);
         if(vesselEquipped != -1) {
 
             EntityLivingBase entity = e.getEntityLiving();

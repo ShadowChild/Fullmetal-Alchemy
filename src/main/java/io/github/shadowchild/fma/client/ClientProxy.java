@@ -32,7 +32,6 @@ public class ClientProxy extends Proxy {
     @Override
     public void registerItemRenderer(Item item, int metadata, String id) {
 
-        super.registerItemRenderer(item, metadata, id);
         ModelLoader.setCustomModelResourceLocation(item, metadata, new ModelResourceLocation(item.getRegistryName(), id));
     }
 }

@@ -19,7 +19,8 @@ public class ItemSoulVessel extends ItemBase implements IBauble {
 
     public ItemSoulVessel(String label) {
 
-        super(label);
+        super(label, "vessel");
+        this.setMaxStackSize(1);
     }
 
     @Override

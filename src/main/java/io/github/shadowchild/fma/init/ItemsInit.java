@@ -1,6 +1,7 @@
 package io.github.shadowchild.fma.init;
 
 
+import io.github.shadowchild.fma.content.item.ItemAmuletCircle;
 import io.github.shadowchild.fma.content.item.ItemPStone;
 import io.github.shadowchild.fma.content.item.ItemSoulVessel;
 import net.minecraft.item.Item;
@@ -12,7 +13,13 @@ public class ItemsInit {
 
     public static final List<Item> ITEMS = new ArrayList<>();
 
-    public static final Item soul_vessel = new ItemSoulVessel("soul_vessel");
-    public static final ItemPStone red_Stone = new ItemPStone("red_stone", true);
-    public static final ItemPStone phil_stone = new ItemPStone("phil_stone", false);
+    // Vessels
+    public static final Item vessel_soul = new ItemSoulVessel("vessel_soul");
+
+    // Stones
+    public static final ItemPStone stone_red = new ItemPStone("stone_red", true);
+    public static final ItemPStone stone_phil = new ItemPStone("stone_phil", false);
+
+    // Wearables
+    public static final Item amulet_circle = new ItemAmuletCircle("amulet_circle");
 }
