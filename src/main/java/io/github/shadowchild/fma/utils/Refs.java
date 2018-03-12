@@ -18,7 +18,8 @@ public class Refs {
 
     public static final CreativeTabs TAB = new FMATab();
 
-    public static final int SOUL_VALUE = Fluid.BUCKET_VOLUME / 16;
+    public static final int SOUL_VOLUME = Fluid.BUCKET_VOLUME;
+    public static final double ENTITY_SOUL_VOLUME = ((double)Fluid.BUCKET_VOLUME / 16d);
 
     private static class FMATab extends CreativeTabs {
 

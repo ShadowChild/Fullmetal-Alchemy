@@ -1,7 +1,7 @@
 package io.github.shadowchild.fma.utils;
 
 
-public interface IHasModel {
+public interface IMeshable {
 
     void registerModels();
 }

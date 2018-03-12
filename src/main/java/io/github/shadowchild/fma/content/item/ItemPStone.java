@@ -16,7 +16,7 @@ public class ItemPStone extends ItemBase {
 
     public ItemPStone(String label, boolean isFake) {
 
-        super(label, "stone");
+        super(label);
         this.isFake = isFake;
         this.setMaxStackSize(1);
     }

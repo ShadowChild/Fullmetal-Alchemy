@@ -34,13 +34,13 @@ public class EntityKilledHandler {
             EntityPlayer player = (EntityPlayer)source;
             ItemStack vessel = BaublesApi.getBaublesHandler(player).getStackInSlot(vesselEquipped);
             NBTTagCompound tag = NBTUtils.getModTagCompound(vessel);
-            int souls = tag.getInteger(NBTUtils.SOUL_NBT_TAG) + Refs.SOUL_VALUE;
+            double souls = tag.getDouble(NBTUtils.SOUL_NBT_TAG) + Refs.ENTITY_SOUL_VOLUME;
             if(souls > vessel.getMaxDamage()) {
 
                 souls = vessel.getMaxDamage();
                 player.sendMessage(new TextComponentString("Unable to collect any more Souls in this Vessel!"));
             }
-            tag.setInteger(NBTUtils.SOUL_NBT_TAG, souls);
+            tag.setDouble(NBTUtils.SOUL_NBT_TAG, souls);
         }
     }
 }

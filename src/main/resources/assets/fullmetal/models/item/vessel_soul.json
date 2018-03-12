@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "fullmetal:items/stone/stone_phil"
+    "layer0": "fullmetal:items/vessel_soul"
   }
 }

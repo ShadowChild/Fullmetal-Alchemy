@@ -3,19 +3,16 @@ package io.github.shadowchild.fma.content;
 
 import io.github.shadowchild.fma.Fullmetal;
 import io.github.shadowchild.fma.init.ItemsInit;
-import io.github.shadowchild.fma.utils.IHasModel;
+import io.github.shadowchild.fma.utils.IMeshable;
 import io.github.shadowchild.fma.utils.Refs;
 import net.minecraft.item.Item;
 
-public class ItemBase extends Item implements IHasModel {
+public class ItemBase extends Item implements IMeshable {
 
-    public ItemBase(String label, String registrySubFolder) {
+    public ItemBase(String label) {
 
         this.setUnlocalizedName(label);
-
-        if(!registrySubFolder.isEmpty()) registrySubFolder = registrySubFolder + "/";
-
-        this.setRegistryName(registrySubFolder + label);
+        this.setRegistryName(label);
         this.setCreativeTab(Refs.TAB);
         ItemsInit.ITEMS.add(this);
     }

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "up": "fullmetal:blocks/receptacle_top",
+    "down": "fullmetal:blocks/receptacle_bottom",
+    "north": "fullmetal:blocks/receptacle_side",
+    "south": "fullmetal:blocks/receptacle_side",
+    "east": "fullmetal:blocks/receptacle_side",
+    "west": "fullmetal:blocks/receptacle_side",
+    "particle": "fullmetal:blocks/receptacle_side"
+  }
+}

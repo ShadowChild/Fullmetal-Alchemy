@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "fullmetal:receptacle_symbol"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

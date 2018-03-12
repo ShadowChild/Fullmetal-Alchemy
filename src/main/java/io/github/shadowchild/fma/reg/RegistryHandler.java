@@ -3,7 +3,7 @@ package io.github.shadowchild.fma.reg;
 
 import io.github.shadowchild.fma.init.BlocksInit;
 import io.github.shadowchild.fma.init.ItemsInit;
-import io.github.shadowchild.fma.utils.IHasModel;
+import io.github.shadowchild.fma.utils.IMeshable;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -18,6 +18,7 @@ public class RegistryHandler {
     public static void onItemRegister(RegistryEvent.Register<Item> e) {
 
         e.getRegistry().registerAll(ItemsInit.ITEMS.toArray(new Item[0]));
+        e.getRegistry().registerAll(BlocksInit.ITEM_BLOCKS.toArray(new Item[0]));
     }
 
     @SubscribeEvent
@@ -31,17 +32,17 @@ public class RegistryHandler {
 
         for(Item item : ItemsInit.ITEMS) {
 
-            if(item instanceof IHasModel) {
+            if(item instanceof IMeshable) {
 
-                ((IHasModel) item).registerModels();
+                ((IMeshable) item).registerModels();
             }
         }
 
         for(Block block : BlocksInit.BLOCKS){
 
-            if(block instanceof IHasModel){
+            if(block instanceof IMeshable){
 
-                ((IHasModel) block).registerModels();
+                ((IMeshable) block).registerModels();
             }
         }
     }
