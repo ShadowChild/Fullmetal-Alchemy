@@ -1,0 +1,7 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "fullmetal:items/trinket_charm",
+    "layer1": "fullmetal:items/trinket_charm_overlay"
+  }
+}

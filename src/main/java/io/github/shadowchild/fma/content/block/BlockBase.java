@@ -30,6 +30,6 @@ public class BlockBase extends Block implements IMeshable {
     @Override
     public void registerModels() {
 
-        Fullmetal.proxy.registerItemRenderer(createItemBlock(), 0, getUnlocalizedName());
+        Fullmetal.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
     }
 }

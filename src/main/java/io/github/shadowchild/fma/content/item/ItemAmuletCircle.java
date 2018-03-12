@@ -16,10 +16,4 @@ public class ItemAmuletCircle extends ItemWearable {
         super(label, BaubleType.AMULET);
         this.setMaxStackSize(1);
     }
-
-    @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-
-        tooltip.add("An Amulet inscribed with Transmute Circle");
-    }
 }

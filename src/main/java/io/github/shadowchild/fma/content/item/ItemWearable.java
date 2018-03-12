@@ -14,6 +14,7 @@ public class ItemWearable extends ItemBase implements IBauble {
 
         super(label);
         this.baubleType = baubleType;
+        this.setMaxStackSize(1);
     }
 
     @Override
