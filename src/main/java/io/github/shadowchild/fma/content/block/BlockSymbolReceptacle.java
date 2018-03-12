@@ -1,6 +1,7 @@
 package io.github.shadowchild.fma.content.block;
 
 
+import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -12,7 +13,7 @@ import net.minecraft.world.World;
 
 public class BlockSymbolReceptacle extends BlockBase {
 
-    public static final PropertyDirection FACING = PropertyDirection.create("facing");
+    public static final PropertyDirection FACING = BlockHorizontal.FACING;
 
     public BlockSymbolReceptacle(String label) {
 
@@ -22,21 +23,19 @@ public class BlockSymbolReceptacle extends BlockBase {
 
     @Override
     public void onBlockPlacedBy(World world, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
-        world.setBlockState(pos, state.withProperty(FACING, getFacingFromEntity(pos, placer)), 2);
-    }
 
-    public static EnumFacing getFacingFromEntity(BlockPos clickedBlock, EntityLivingBase entity) {
-        return EnumFacing.getFacingFromVector((float) (entity.posX - clickedBlock.getX()), (float) (entity.posY - clickedBlock.getY()), (float) (entity.posZ - clickedBlock.getZ()));
+        EnumFacing facing = placer.getHorizontalFacing();
+        world.setBlockState(pos, state.withProperty(FACING, facing), 2);
     }
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return getDefaultState().withProperty(FACING, EnumFacing.getFront(meta & 7));
+        return getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta & 3));
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return state.getValue(FACING).getIndex();
+        return state.getValue(FACING).getHorizontalIndex();
     }
 
     @Override

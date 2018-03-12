@@ -1,8 +1,24 @@
+# Fullmetal Alchemy
+
+# Misc
 itemGroup.tab_fma=Fullmetal Alchemy
 fluid.soul=Soul
 
+# Items
 item.vessel_soul.name=Soul Vessel
 
 item.stone_phil.name=Philosopher's Stone
 item.stone_red.name=Red Stone
-item.amulet_circle.name=Alchemical Amulet
+
+item.trinket_amulet.name=Alchemical Amulet
+item.trinket_amulet_inscribed.name=Inscribed Amulet
+item.trinket_ring.name=Alchemical Ring
+item.trinket_ring_inscribed.name=Inscribed Ring
+item.trinket_charm.name=Alchemical Charm
+item.trinket_charm_inscribed.name=Inscribed Charm
+
+# Blocks
+tile.receptacle_symbol.name=Alchemical Symbol Receptacle
+
+# Damage Source
+death.attack.fake_stone=%1$s learned the value of Souls!
