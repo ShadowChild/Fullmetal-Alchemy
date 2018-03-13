@@ -7,5 +7,14 @@ An API will be available for other mods to enable transmutation and other featur
 
 # Dependencies
 
-This mod is currently only dependent on the Baubles mod by Azanor.
+Hard Dependencies:
+Baubles by Azanor - for Trinkets.
+
+Soft Dependencies
+Botania by Vazkii and williewillus
+    Botania must be set as a module dependency as of current, will be fixed in the future.
+
+# Credits
+Azanor for the Baubles mod.
+Vazkii and williewillus for Botania
 
