@@ -18,6 +18,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'com.matthewprenger.cursegradle'
 apply plugin: 'maven'
+apply plugin: 'maven-publish'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 repositories {
@@ -58,6 +59,7 @@ minecraft {
 
 dependencies {
 
+    compile "io.github.shadowchild.util:ShadowUtil:1.12.2-1.0"
     deobfCompile "com.azanor.baubles:Baubles:1.12-1.5.2"
     deobfCompile "mezz.jei:jei_1.12.2:4.8.5.157:api"
     runtime "mezz.jei:jei_1.12.2:4.8.5.157"
