@@ -7,10 +7,9 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -47,23 +46,20 @@ public class ItemPStone extends ItemBase {
     }
 
     @Override
-    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+    public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer player, EnumHand hand) {
 
         if(isFake && !worldIn.isRemote) {
 
-            int rand1 = Refs.RANDOM.nextInt(10);
-            int rand2 = Refs.RANDOM.nextInt(10);
-            Refs.LOGGER.info("rand1: " + rand1 + " rand2: " + rand2);
+            int rand1 = Refs.RANDOM.nextInt(15);
+            int rand2 = Refs.RANDOM.nextInt(15);
             if(rand1 == rand2) {
 
-                Refs.LOGGER.info("Attempting to kill player!");
                 player.inventory.deleteStack(player.getHeldItem(hand));
                 player.attackEntityFrom(Refs.FAKE_STONE_FAILURE, player.getHealth() + 5f);
                 worldIn.createExplosion(player, player.posX, player.posY, player.posZ, 2f, true);
-                return EnumActionResult.FAIL;
+                return new ActionResult<>(EnumActionResult.FAIL, player.getHeldItem(hand));
             }
         }
-
-        return super.onItemUse(player, worldIn, pos, hand, facing, hitX, hitY, hitZ);
+        return super.onItemRightClick(worldIn, player, hand);
     }
 }
