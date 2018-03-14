@@ -1,7 +1,7 @@
 package io.github.shadowchild.fma.content.item;
 
 
-import io.github.shadowchild.fma.content.ItemBase;
+import io.github.shadowchild.fma.content.base.ItemBase;
 import io.github.shadowchild.fma.utils.Refs;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;

@@ -1,4 +1,4 @@
-package io.github.shadowchild.fma.content.block;
+package io.github.shadowchild.fma.content.base;
 
 
 import io.github.shadowchild.fma.Fullmetal;

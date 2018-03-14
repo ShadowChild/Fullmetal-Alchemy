@@ -1,8 +1,9 @@
 package io.github.shadowchild.fma.init;
 
 
-import io.github.shadowchild.fma.content.block.BlockBase;
+import io.github.shadowchild.fma.content.base.BlockBase;
 import io.github.shadowchild.fma.content.block.BlockSymbolReceptacle;
+import io.github.shadowchild.fma.content.block.rune.BlockRune;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -16,4 +17,7 @@ public class BlocksInit {
 
     // Alchemic Blocks
     public static BlockBase receptacle = new BlockSymbolReceptacle("receptacle_symbol");
+
+    // Runes
+    public static BlockRune rune_air = new BlockRune("rune_air", BlockRune.RuneType.AIR);
 }

@@ -3,7 +3,7 @@ package io.github.shadowchild.fma.content.item;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
-import io.github.shadowchild.fma.content.ItemBase;
+import io.github.shadowchild.fma.content.base.ItemBase;
 import net.minecraft.item.ItemStack;
 
 public class ItemWearable extends ItemBase implements IBauble {

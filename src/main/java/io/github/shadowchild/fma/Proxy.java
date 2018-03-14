@@ -1,4 +1,4 @@
-package io.github.shadowchild.fma.common;
+package io.github.shadowchild.fma;
 
 
 import io.github.shadowchild.fma.api.FullmetalAPI;

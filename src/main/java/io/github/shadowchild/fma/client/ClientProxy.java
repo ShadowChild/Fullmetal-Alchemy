@@ -1,7 +1,7 @@
 package io.github.shadowchild.fma.client;
 
 
-import io.github.shadowchild.fma.common.Proxy;
+import io.github.shadowchild.fma.Proxy;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;

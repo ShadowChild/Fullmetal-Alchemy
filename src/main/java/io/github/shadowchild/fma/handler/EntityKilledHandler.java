@@ -1,4 +1,4 @@
-package io.github.shadowchild.fma;
+package io.github.shadowchild.fma.handler;
 
 
 import baubles.api.BaublesApi;

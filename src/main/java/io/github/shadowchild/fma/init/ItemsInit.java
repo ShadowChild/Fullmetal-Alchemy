@@ -2,7 +2,8 @@ package io.github.shadowchild.fma.init;
 
 
 import baubles.api.BaubleType;
-import io.github.shadowchild.fma.content.ItemBase;
+import io.github.shadowchild.fma.content.base.ItemBase;
+import io.github.shadowchild.fma.content.item.ItemChalk;
 import io.github.shadowchild.fma.content.item.ItemPStone;
 import io.github.shadowchild.fma.content.item.ItemSoulVessel;
 import io.github.shadowchild.fma.content.item.ItemWearable;
@@ -32,4 +33,7 @@ public class ItemsInit {
     public static final ItemWearable trinket_ring_inscribed = new ItemWearableInscribed("trinket_ring_inscribed", BaubleType.RING);
     public static final ItemWearable trinket_amulet_circle = new ItemWearableInscribed("trinket_amulet_inscribed", BaubleType.AMULET);
     public static final ItemWearable trinket_charm_inscribed = new ItemWearableInscribed("trinket_charm_inscribed", BaubleType.CHARM);
+
+    // Alchemical Items
+    public static final ItemChalk alchemic_chalk = new ItemChalk("alchemic_chalk");
 }

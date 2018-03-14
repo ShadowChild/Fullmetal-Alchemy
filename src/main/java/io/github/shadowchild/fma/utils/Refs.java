@@ -19,7 +19,7 @@ public class Refs {
     public static final String MOD_VERSION = "0.0.1"; // Version uses the MAJOR.MINOR.BUILD system.
     public static final String DEPENDENCIES = "required-after:baubles@[1.5.2,);";
 
-    public static final String COMMON_PROXY = "io.github.shadowchild.fma.common.Proxy";
+    public static final String COMMON_PROXY = "io.github.shadowchild.fma.Proxy";
     public static final String CLIENT_PROXY = "io.github.shadowchild.fma.client.ClientProxy";
 
     public static final Random RANDOM = new Random();
