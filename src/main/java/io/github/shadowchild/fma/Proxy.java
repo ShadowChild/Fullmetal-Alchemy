@@ -2,7 +2,7 @@ package io.github.shadowchild.fma;
 
 
 import io.github.shadowchild.fma.api.FullmetalAPI;
-import io.github.shadowchild.fma.content.fluid.FluidBase;
+import io.github.shadowchild.fma.content.fluid.BaseFluid;
 import io.github.shadowchild.fma.utils.Refs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityHusk;
@@ -27,7 +27,7 @@ public class Proxy {
     public void preInit(FMLPreInitializationEvent e) {
 
         initBlacklist();
-        FluidBase.soul_fluid = new FluidBase("soul", Color.DARK_GRAY).setGaseous(true).setViscosity(-1000).setDensity(-1000);
+        BaseFluid.soul_fluid = new BaseFluid("soul", Color.DARK_GRAY).setGaseous(true).setViscosity(-1000).setDensity(-1000);
     }
 
     private void initBlacklist() {

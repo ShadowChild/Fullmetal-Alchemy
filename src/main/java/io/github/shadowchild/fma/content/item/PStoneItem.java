@@ -1,7 +1,7 @@
 package io.github.shadowchild.fma.content.item;
 
 
-import io.github.shadowchild.fma.content.base.ItemBase;
+import io.github.shadowchild.fma.content.base.BaseItem;
 import io.github.shadowchild.fma.utils.Refs;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,11 +15,11 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ItemPStone extends ItemBase {
+public class PStoneItem extends BaseItem {
 
     private final boolean isFake;
 
-    public ItemPStone(String label, boolean isFake) {
+    public PStoneItem(String label, boolean isFake) {
 
         super(label);
         this.isFake = isFake;

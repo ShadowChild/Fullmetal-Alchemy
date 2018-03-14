@@ -2,19 +2,19 @@ package io.github.shadowchild.fma.content.base;
 
 
 import io.github.shadowchild.fma.Fullmetal;
-import io.github.shadowchild.fma.init.ItemsInit;
+import io.github.shadowchild.fma.init.InitItems;
 import io.github.shadowchild.fma.utils.IMeshable;
 import io.github.shadowchild.fma.utils.Refs;
 import net.minecraft.item.Item;
 
-public class ItemBase extends Item implements IMeshable {
+public class BaseItem extends Item implements IMeshable {
 
-    public ItemBase(String label) {
+    public BaseItem(String label) {
 
         this.setUnlocalizedName(label);
         this.setRegistryName(label);
         this.setCreativeTab(Refs.TAB);
-        ItemsInit.ITEMS.add(this);
+        InitItems.ITEMS.add(this);
     }
 
     @Override

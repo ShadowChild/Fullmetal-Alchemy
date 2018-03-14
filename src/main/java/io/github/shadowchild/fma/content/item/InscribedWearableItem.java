@@ -9,9 +9,9 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ItemWearableInscribed extends ItemWearable {
+public class InscribedWearableItem extends WearableItem {
 
-    public ItemWearableInscribed(String label, BaubleType baubleType) {
+    public InscribedWearableItem(String label, BaubleType baubleType) {
 
         super(label, baubleType);
     }

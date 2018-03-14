@@ -3,9 +3,9 @@ package io.github.shadowchild.fma.damage;
 
 import net.minecraft.util.DamageSource;
 
-public class DamageSourceFakeStone extends DamageSource {
+public class FakeStoneDamageSource extends DamageSource {
 
-    public DamageSourceFakeStone() {
+    public FakeStoneDamageSource() {
 
         super("fake_stone");
     }

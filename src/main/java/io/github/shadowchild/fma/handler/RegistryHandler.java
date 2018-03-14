@@ -1,8 +1,8 @@
-package io.github.shadowchild.fma.reg;
+package io.github.shadowchild.fma.handler;
 
 
-import io.github.shadowchild.fma.init.BlocksInit;
-import io.github.shadowchild.fma.init.ItemsInit;
+import io.github.shadowchild.fma.init.InitBlocks;
+import io.github.shadowchild.fma.init.InitItems;
 import io.github.shadowchild.fma.utils.IMeshable;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -17,20 +17,20 @@ public class RegistryHandler {
     @SubscribeEvent
     public static void onItemRegister(RegistryEvent.Register<Item> e) {
 
-        e.getRegistry().registerAll(ItemsInit.ITEMS.toArray(new Item[0]));
-        e.getRegistry().registerAll(BlocksInit.ITEM_BLOCKS.toArray(new Item[0]));
+        e.getRegistry().registerAll(InitItems.ITEMS.toArray(new Item[0]));
+        e.getRegistry().registerAll(InitBlocks.ITEM_BLOCKS.toArray(new Item[0]));
     }
 
     @SubscribeEvent
     public static void onBlockRegister(RegistryEvent.Register<Block> e) {
 
-        e.getRegistry().registerAll(BlocksInit.BLOCKS.toArray(new Block[0]));
+        e.getRegistry().registerAll(InitBlocks.BLOCKS.toArray(new Block[0]));
     }
 
     @SubscribeEvent
     public static void onModelRegister(ModelRegistryEvent event) {
 
-        for(Item item : ItemsInit.ITEMS) {
+        for(Item item : InitItems.ITEMS) {
 
             if(item instanceof IMeshable) {
 
@@ -38,7 +38,7 @@ public class RegistryHandler {
             }
         }
 
-        for(Block block : BlocksInit.BLOCKS){
+        for(Block block : InitBlocks.BLOCKS){
 
             if(block instanceof IMeshable){
 

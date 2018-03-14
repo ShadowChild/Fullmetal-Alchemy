@@ -3,7 +3,7 @@ package io.github.shadowchild.fma.content.item;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
-import io.github.shadowchild.fma.content.base.ItemBase;
+import io.github.shadowchild.fma.content.base.BaseItem;
 import io.github.shadowchild.fma.utils.NBTUtils;
 import io.github.shadowchild.fma.utils.Refs;
 import net.minecraft.client.util.ITooltipFlag;
@@ -15,9 +15,9 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ItemSoulVessel extends ItemBase implements IBauble {
+public class SoulVesselItem extends BaseItem implements IBauble {
 
-    public ItemSoulVessel(String label) {
+    public SoulVesselItem(String label) {
 
         super(label);
         this.setMaxStackSize(1);

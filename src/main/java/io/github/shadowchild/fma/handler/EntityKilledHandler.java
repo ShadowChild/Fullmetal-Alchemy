@@ -3,7 +3,7 @@ package io.github.shadowchild.fma.handler;
 
 import baubles.api.BaublesApi;
 import io.github.shadowchild.fma.api.FullmetalAPI;
-import io.github.shadowchild.fma.init.ItemsInit;
+import io.github.shadowchild.fma.init.InitItems;
 import io.github.shadowchild.fma.utils.NBTUtils;
 import io.github.shadowchild.fma.utils.Refs;
 import net.minecraft.entity.Entity;
@@ -25,7 +25,7 @@ public class EntityKilledHandler {
         Entity source = e.getSource().getTrueSource();
         if(!(source instanceof EntityPlayer)) return;
 
-        int vesselEquipped = BaublesApi.isBaubleEquipped((EntityPlayer)source, ItemsInit.vessel_soul);
+        int vesselEquipped = BaublesApi.isBaubleEquipped((EntityPlayer)source, InitItems.vessel_soul);
         if(vesselEquipped != -1) {
 
             EntityLivingBase entity = e.getEntityLiving();

@@ -1,16 +1,17 @@
 package io.github.shadowchild.fma.content.block.rune;
 
 
-import io.github.shadowchild.fma.content.base.BlockBaseHorizontal;
+import io.github.shadowchild.fma.content.base.BaseBlockHorizontal;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 
-public class BlockRune extends BlockBaseHorizontal {
+public class RuneBlock extends BaseBlockHorizontal {
 
     private final RuneType runeType;
 
-    public BlockRune(String label, RuneType runeType) {
+    public RuneBlock(String label, RuneType runeType) {
 
-        super(label);
+        super(label, Material.CLOTH);
         this.runeType = runeType;
     }
 
@@ -22,7 +23,7 @@ public class BlockRune extends BlockBaseHorizontal {
     @Override
     public boolean isOpaqueCube(IBlockState state) {
 
-        return true;
+        return false;
     }
 
     @Override

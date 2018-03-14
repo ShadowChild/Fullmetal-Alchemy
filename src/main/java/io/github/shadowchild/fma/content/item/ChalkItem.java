@@ -1,7 +1,7 @@
 package io.github.shadowchild.fma.content.item;
 
 
-import io.github.shadowchild.fma.content.base.ItemBase;
+import io.github.shadowchild.fma.content.base.BaseItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
@@ -9,9 +9,9 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ItemChalk extends ItemBase {
+public class ChalkItem extends BaseItem {
 
-    public ItemChalk(String label) {
+    public ChalkItem(String label) {
 
         super(label);
     }

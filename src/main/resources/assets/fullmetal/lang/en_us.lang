@@ -7,7 +7,7 @@ fluid.soul=Soul
 # Items
 item.vessel_soul.name=Soul Vessel
 
-item.stone_phil.name=Philosopher's Stone
+item.stone_philosopher.name=Philosopher's Stone
 item.stone_red.name=Red Stone
 
 item.trinket_amulet.name=Alchemical Amulet

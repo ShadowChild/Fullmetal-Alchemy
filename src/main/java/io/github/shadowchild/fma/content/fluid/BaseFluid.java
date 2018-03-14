@@ -8,11 +8,11 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import java.awt.*;
 
-public class FluidBase extends Fluid {
+public class BaseFluid extends Fluid {
 
     public static Fluid soul_fluid;
 
-    public FluidBase(String fluidName, Color color) {
+    public BaseFluid(String fluidName, Color color) {
 
         super(fluidName, new ResourceLocation(Refs.MOD_ID, "blocks/fluids/" + fluidName + "_still"), new ResourceLocation(Refs.MOD_ID, "blocks/fluids/" + fluidName + "_flowing"), color);
 

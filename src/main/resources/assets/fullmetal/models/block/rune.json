@@ -1,5 +1,10 @@
 {
   "parent": "block/thin_block",
+  "defaults": {
+  	"textures": {
+  	  "invisible": ""
+  	}
+  },
   "elements": [
     {
       "name": "cube",
@@ -16,15 +21,19 @@
           "cullface": "down"
         },
         "north": {
+          "texture": "#invisible",
           "cullface": "north"
         },
         "east": {
+          "texture": "#invisible",
           "cullface": "east"
         },
         "south": {
+          "texture": "#invisible",
           "cullface": "south"
         },
         "west": {
+          "texture": "#invisible",
           "cullface": "west"
         }
       },

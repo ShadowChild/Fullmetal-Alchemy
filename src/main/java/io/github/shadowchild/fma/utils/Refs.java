@@ -1,16 +1,17 @@
 package io.github.shadowchild.fma.utils;
 
 
-import io.github.shadowchild.fma.damage.DamageSourceFakeStone;
-import io.github.shadowchild.fma.init.ItemsInit;
+import java.util.Random;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import io.github.shadowchild.fma.damage.FakeStoneDamageSource;
+import io.github.shadowchild.fma.init.InitItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.fluids.Fluid;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.util.Random;
 
 public class Refs {
 
@@ -26,7 +27,7 @@ public class Refs {
     public static final Logger LOGGER = LogManager.getLogger("Fullmetal");
 
     public static final CreativeTabs TAB = new FMATab();
-    public static final DamageSource FAKE_STONE_FAILURE = new DamageSourceFakeStone();
+    public static final DamageSource FAKE_STONE_FAILURE = new FakeStoneDamageSource();
 
     public static final int SOUL_VOLUME = Fluid.BUCKET_VOLUME;
     public static final double ENTITY_SOUL_VOLUME = ((double)Fluid.BUCKET_VOLUME / 16d);
@@ -41,7 +42,7 @@ public class Refs {
         @Override
         public ItemStack getTabIconItem() {
 
-            return new ItemStack(ItemsInit.stone_phil);
+            return new ItemStack(InitItems.stone_philosopher);
         }
     }
 }
