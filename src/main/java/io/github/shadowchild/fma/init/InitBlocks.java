@@ -1,12 +1,12 @@
 package io.github.shadowchild.fma.init;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 import io.github.shadowchild.fma.content.block.rune.RuneBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class InitBlocks {
 
@@ -28,7 +28,7 @@ public class InitBlocks {
     public static RuneBlock rune_copper = new RuneBlock("rune_copper", RuneBlock.RuneType.COPPER);
     public static RuneBlock rune_silver = new RuneBlock("rune_silver", RuneBlock.RuneType.SILVER);
     public static RuneBlock rune_gold = new RuneBlock("rune_gold", RuneBlock.RuneType.GOLD);
-    public static RuneBlock rune_iron = new RuneBlock("rune_silver", RuneBlock.RuneType.SILVER);
+    public static RuneBlock rune_iron = new RuneBlock("rune_iron", RuneBlock.RuneType.SILVER);
     public static RuneBlock rune_antimony = new RuneBlock("rune_antimony", RuneBlock.RuneType.ANTIMONY);
     public static RuneBlock rune_tin = new RuneBlock("rune_tin", RuneBlock.RuneType.TIN);
     public static RuneBlock rune_platinum = new RuneBlock("rune_platinum", RuneBlock.RuneType.PLATINUM);

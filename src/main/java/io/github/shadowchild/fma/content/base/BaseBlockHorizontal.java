@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 
 public class BaseBlockHorizontal extends BaseBlock {
 
-    private static final PropertyDirection FACING = BlockHorizontal.FACING;
+    public static final PropertyDirection FACING = BlockHorizontal.FACING;
 
     public BaseBlockHorizontal(String label, Material material) {
 
