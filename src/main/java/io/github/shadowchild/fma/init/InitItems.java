@@ -1,17 +1,13 @@
 package io.github.shadowchild.fma.init;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 import baubles.api.BaubleType;
 import io.github.shadowchild.fma.content.base.BaseItem;
-import io.github.shadowchild.fma.content.item.ChalkItem;
-import io.github.shadowchild.fma.content.item.InscribedWearableItem;
-import io.github.shadowchild.fma.content.item.PStoneItem;
-import io.github.shadowchild.fma.content.item.SoulVesselItem;
-import io.github.shadowchild.fma.content.item.WearableItem;
+import io.github.shadowchild.fma.content.item.*;
 import net.minecraft.item.Item;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class InitItems {
 
@@ -36,4 +32,8 @@ public class InitItems {
 
     // Alchemical Items
     public static final ChalkItem alchemic_chalk = new ChalkItem("alchemic_chalk");
+
+    // Msc Items
+    public static final BaseItem chalk = new BaseItem("chalk");
+    public static final BaseItem chalk_dust = new BaseItem("chalk_dust");
 }

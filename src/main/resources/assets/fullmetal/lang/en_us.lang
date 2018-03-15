@@ -17,6 +17,10 @@ item.trinket_ring_inscribed.name=Inscribed Ring
 item.trinket_charm.name=Alchemical Charm
 item.trinket_charm_inscribed.name=Inscribed Charm
 
+item.alchemical_chalk.name=Alchemical Chalk
+item.chalk.name=Chalk
+item.chalk_dust=Chalk Dust
+
 # Blocks
 tile.receptacle_symbol.name=Alchemical Symbol Receptacle
 
