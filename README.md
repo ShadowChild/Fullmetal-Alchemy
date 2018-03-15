@@ -10,16 +10,7 @@ An API will be available for other mods to enable transmutation and other featur
 
 Hard Dependencies:
 
-Baubles by Azanor - for Trinkets.
-
-
-Soft Dependencies:
-
-Botania by Vazkii and williewillus - For the MultiBlock api
-
-Botania must be set as a module dependency as of current, will be fixed in the future.
+Baubles 1.5.2 by Azanor - for Trinkets.
 
 # Credits
 Azanor for the Baubles mod.
-
-Vazkii and williewillus for Botania.
