@@ -1,17 +1,24 @@
 package io.github.shadowchild.fma.content.block.rune;
 
 
-import io.github.shadowchild.fma.content.base.BaseBlockHorizontal;
-import net.minecraft.block.material.Material;
+import io.github.shadowchild.fma.content.base.BaseBlock;
+import io.github.shadowchild.fma.init.InitBlocks;
+import net.minecraft.block.state.BlockWorldState;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.state.pattern.BlockMaterialMatcher;
+import net.minecraft.block.state.pattern.BlockPattern;
+import net.minecraft.block.state.pattern.BlockStateMatcher;
+import net.minecraft.block.state.pattern.FactoryBlockPattern;
 
-public class RuneBlock extends BaseBlockHorizontal {
+public class RuneBlock extends BaseBlock {
 
     private final RuneType runeType;
 
+    private BlockPattern circle_pattern;
+
     public RuneBlock(String label, RuneType runeType) {
 
-        super(label, Material.CLOTH);
+        super(label, InitBlocks.RUNE);
         this.runeType = runeType;
     }
 
@@ -36,6 +43,34 @@ public class RuneBlock extends BaseBlockHorizontal {
     public boolean isFullCube(IBlockState state) {
 
         return false;
+    }
+
+    public BlockPattern getOrCreateBlockPattern() {
+
+        if(circle_pattern == null) {
+
+            String[] pattern_up = new String[] {
+                    "....v....",
+                    ".........",
+                    ".>.....<.",
+                    ".........",
+                    ".........",
+                    ".........",
+                    ".>.....<.",
+                    ".........",
+                    "....^...."
+            };
+            circle_pattern = FactoryBlockPattern.start()
+                .aisle(pattern_up)
+                    .where('.', BlockWorldState.hasState(BlockStateMatcher.ANY))
+                    .where('v', BlockWorldState.hasState(BlockMaterialMatcher.forMaterial(InitBlocks.RUNE)))
+                    .where('>', BlockWorldState.hasState(BlockMaterialMatcher.forMaterial(InitBlocks.RUNE)))
+                    .where('<', BlockWorldState.hasState(BlockMaterialMatcher.forMaterial(InitBlocks.RUNE)))
+                    .where('^', BlockWorldState.hasState(BlockMaterialMatcher.forMaterial(InitBlocks.RUNE)))
+                .build();
+        }
+
+        return circle_pattern;
     }
 
     public enum RuneType {

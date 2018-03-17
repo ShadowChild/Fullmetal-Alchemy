@@ -3,6 +3,8 @@ package io.github.shadowchild.fma.init;
 
 import io.github.shadowchild.fma.content.block.rune.RuneBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 
 import java.util.ArrayList;
@@ -12,6 +14,8 @@ public class InitBlocks {
 
     public static final List<Block> BLOCKS = new ArrayList<>();
     public static final List<Item> ITEM_BLOCKS = new ArrayList<>();
+
+    public static final Material RUNE = new Material(MapColor.GRAY);
 
     // Alchemic Blocks
 
