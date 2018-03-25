@@ -1,6 +1,7 @@
 package io.github.shadowchild.fma.handler;
 
 
+import io.github.shadowchild.fma.content.tileentity.TileEntityTransmuteRune;
 import io.github.shadowchild.fma.init.InitBlocks;
 import io.github.shadowchild.fma.init.InitItems;
 import io.github.shadowchild.fma.utils.IMeshable;
@@ -10,6 +11,7 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod.EventBusSubscriber
 public class RegistryHandler {
@@ -25,6 +27,8 @@ public class RegistryHandler {
     public static void onBlockRegister(RegistryEvent.Register<Block> e) {
 
         e.getRegistry().registerAll(InitBlocks.BLOCKS.toArray(new Block[0]));
+
+        GameRegistry.registerTileEntity(TileEntityTransmuteRune.class, InitBlocks.crafting_rune.getRegistryName().toString());
     }
 
     @SubscribeEvent

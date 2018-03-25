@@ -2,7 +2,7 @@
   "parent": "block/thin_block",
   "defaults": {
   	"textures": {
-  	  "invisible": ""
+  	  "invisible": "fullmetal:blocks/alpha"
   	}
   },
   "elements": [

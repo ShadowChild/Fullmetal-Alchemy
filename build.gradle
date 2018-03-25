@@ -26,12 +26,22 @@ repositories {
     mavenLocal()
     maven {
 
-        name = "thiakil"
-        url = "http://maven.thiakil.com"
+        name = "TehNut"
+        url = "https://tehnut.info/maven"
     }
     maven {
 
         url = "http://dvs1.progwml6.com/files/maven"
+    }
+    maven {
+
+        name = "JitPack"
+        url = "https://jitpack.io"
+    }
+    maven {
+
+        name = "thiakil"
+        url = "http://maven.thiakil.com"
     }
 }
 
@@ -60,9 +70,11 @@ minecraft {
 dependencies {
 
     compile "io.github.shadowchild.util:ShadowUtil:1.12.2-1.0"
+    //compile 'com.github.Azanor:Baubles:5df3d46'
     deobfCompile "com.azanor.baubles:Baubles:1.12-1.5.2"
-    deobfCompile "mezz.jei:jei_1.12.2:4.8.5.157:api"
-    runtime "mezz.jei:jei_1.12.2:4.8.5.157"
+    deobfCompile "mezz.jei:jei_1.12.2:4.8.5.159:api"
+    deobfCompile "mcp.mobius.waila:Hwyla:1.8.24-B39_1.12"
+    runtime "mezz.jei:jei_1.12.2:4.8.5.159"
 }
 
 processResources {

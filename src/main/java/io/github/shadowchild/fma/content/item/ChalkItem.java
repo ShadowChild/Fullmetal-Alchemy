@@ -2,6 +2,7 @@ package io.github.shadowchild.fma.content.item;
 
 
 import io.github.shadowchild.fma.content.base.BaseItem;
+import io.github.shadowchild.fma.content.block.CraftingRune;
 import io.github.shadowchild.fma.content.block.rune.RuneBlock;
 import io.github.shadowchild.fma.init.InitBlocks;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -17,6 +18,8 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import java.util.Random;
+
 public class ChalkItem extends BaseItem {
 
     public ChalkItem(String label) {
@@ -28,10 +31,10 @@ public class ChalkItem extends BaseItem {
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 
         Block rune = worldIn.getBlockState(pos).getBlock();
-        if(rune instanceof RuneBlock) {
+        if(rune instanceof CraftingRune) {
 
             // Attempt to create the circle
-            BlockPattern.PatternHelper helper = ((RuneBlock)rune).getOrCreateBlockPattern().match(worldIn, pos);
+            BlockPattern.PatternHelper helper = ((CraftingRune)rune).getOrCreateBlockPattern().match(worldIn, pos);
             if(helper != null) {
 
                 worldIn.playBroadcastSound(1038, pos.add(1, 0, 1), 0);
@@ -52,7 +55,8 @@ public class ChalkItem extends BaseItem {
 
         if(player.canPlayerEdit(blockpos, facing, itemstack) && worldIn.mayPlace(worldIn.getBlockState(blockpos).getBlock(), blockpos, false, facing,null) && InitBlocks.rune_air.canPlaceBlockAt(worldIn, blockpos)) {
 
-            IBlockState state = InitBlocks.rune_air.getDefaultState();
+            RuneBlock rune = InitBlocks.RUNES.get(new Random().nextInt(InitBlocks.RUNES.size()));
+            IBlockState state = rune.getDefaultState();
             worldIn.setBlockState(blockpos, state);
 
             if(player instanceof EntityPlayerMP) {

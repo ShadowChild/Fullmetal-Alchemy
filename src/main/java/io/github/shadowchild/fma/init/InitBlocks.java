@@ -1,6 +1,7 @@
 package io.github.shadowchild.fma.init;
 
 
+import io.github.shadowchild.fma.content.block.CraftingRune;
 import io.github.shadowchild.fma.content.block.rune.RuneBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
@@ -14,6 +15,7 @@ public class InitBlocks {
 
     public static final List<Block> BLOCKS = new ArrayList<>();
     public static final List<Item> ITEM_BLOCKS = new ArrayList<>();
+    public static final List<RuneBlock> RUNES = new ArrayList<>();
 
     public static final Material RUNE = new Material(MapColor.GRAY);
 
@@ -32,7 +34,7 @@ public class InitBlocks {
     public static RuneBlock rune_copper = new RuneBlock("rune_copper", RuneBlock.RuneType.COPPER);
     public static RuneBlock rune_silver = new RuneBlock("rune_silver", RuneBlock.RuneType.SILVER);
     public static RuneBlock rune_gold = new RuneBlock("rune_gold", RuneBlock.RuneType.GOLD);
-    public static RuneBlock rune_iron = new RuneBlock("rune_iron", RuneBlock.RuneType.SILVER);
+    public static RuneBlock rune_iron = new RuneBlock("rune_iron", RuneBlock.RuneType.IRON);
     public static RuneBlock rune_antimony = new RuneBlock("rune_antimony", RuneBlock.RuneType.ANTIMONY);
     public static RuneBlock rune_tin = new RuneBlock("rune_tin", RuneBlock.RuneType.TIN);
     public static RuneBlock rune_platinum = new RuneBlock("rune_platinum", RuneBlock.RuneType.PLATINUM);
@@ -43,4 +45,6 @@ public class InitBlocks {
     public static RuneBlock rune_magnesium = new RuneBlock("rune_magnesium", RuneBlock.RuneType.MAGNESIUM);
     public static RuneBlock rune_zinc = new RuneBlock("rune_zinc", RuneBlock.RuneType.ZINC);
     public static RuneBlock rune_potash = new RuneBlock("rune_potash", RuneBlock.RuneType.POTASH);
+
+    public static CraftingRune crafting_rune = new CraftingRune("crafting_rune");
 }

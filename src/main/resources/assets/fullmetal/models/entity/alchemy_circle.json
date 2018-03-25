@@ -1,0 +1,19 @@
+{
+	"alchemy_circle": {
+		"texturewidth": 64,
+		"textureheight": 64,
+		"bones": [
+			{
+				"name": "group",
+				"pivot": [8, 8, 8],
+				"cubes": [
+					{
+						"origin": [-8, 0, -8],
+						"size": [16, 1, 16],
+						"uv": [0, 0]
+					}
+				]
+			}
+		]
+	}
+}
