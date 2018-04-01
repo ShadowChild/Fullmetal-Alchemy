@@ -2,7 +2,6 @@ package io.github.shadowchild.fma.content.tileentity;
 
 
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -10,9 +9,9 @@ import net.minecraftforge.items.ItemStackHandler;
 
 import javax.annotation.Nullable;
 
-public class TileEntityTransmuteRune extends TileEntity {
+public class TileEntityTransmuteRune extends BaseTileEntity {
 
-    private ItemStackHandler inventory = new ItemStackHandler(1);
+    public ItemStackHandler inventory = new ItemStackHandler(1);
 
     @Override
     public void readFromNBT(NBTTagCompound compound) {

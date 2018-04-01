@@ -2,13 +2,12 @@ package io.github.shadowchild.fma.content.item;
 
 
 import io.github.shadowchild.fma.content.base.BaseItem;
-import io.github.shadowchild.fma.content.block.CraftingRune;
+import io.github.shadowchild.fma.content.block.TransmuteRuneBlock;
 import io.github.shadowchild.fma.content.block.rune.RuneBlock;
 import io.github.shadowchild.fma.init.InitBlocks;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.block.state.pattern.BlockPattern;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
@@ -31,20 +30,14 @@ public class ChalkItem extends BaseItem {
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 
         Block rune = worldIn.getBlockState(pos).getBlock();
-        if(rune instanceof CraftingRune) {
+        if(rune instanceof TransmuteRuneBlock) {
 
-            // Attempt to create the circle
-            BlockPattern.PatternHelper helper = ((CraftingRune)rune).getOrCreateBlockPattern().match(worldIn, pos);
-            if(helper != null) {
-
-                worldIn.playBroadcastSound(1038, pos.add(1, 0, 1), 0);
-                return EnumActionResult.SUCCESS;
-            }
+            ((TransmuteRuneBlock)rune).doTransmute(worldIn, pos);
+            return EnumActionResult.SUCCESS;
         } else {
 
             return placeRune(player, worldIn, pos, hand, facing);
         }
-        return EnumActionResult.FAIL;
     }
 
     private EnumActionResult placeRune(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing) {

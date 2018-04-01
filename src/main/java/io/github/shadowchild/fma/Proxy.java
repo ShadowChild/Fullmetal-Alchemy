@@ -56,4 +56,8 @@ public class Proxy {
     public void registerItemRenderer(Item item, int metadata, String id) {
 
     }
+
+    public void initRenders() {
+
+    }
 }

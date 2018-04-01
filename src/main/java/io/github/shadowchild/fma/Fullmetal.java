@@ -33,6 +33,7 @@ public class Fullmetal {
     public void init(FMLInitializationEvent e) {
 
         proxy.init(e);
+        proxy.initRenders();
     }
 
     @Mod.EventHandler

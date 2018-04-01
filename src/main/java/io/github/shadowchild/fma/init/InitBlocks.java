@@ -1,7 +1,7 @@
 package io.github.shadowchild.fma.init;
 
 
-import io.github.shadowchild.fma.content.block.CraftingRune;
+import io.github.shadowchild.fma.content.block.TransmuteRuneBlock;
 import io.github.shadowchild.fma.content.block.rune.RuneBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
@@ -46,5 +46,5 @@ public class InitBlocks {
     public static RuneBlock rune_zinc = new RuneBlock("rune_zinc", RuneBlock.RuneType.ZINC);
     public static RuneBlock rune_potash = new RuneBlock("rune_potash", RuneBlock.RuneType.POTASH);
 
-    public static CraftingRune crafting_rune = new CraftingRune("crafting_rune");
+    public static TransmuteRuneBlock crafting_rune = new TransmuteRuneBlock("transmute_rune");
 }
