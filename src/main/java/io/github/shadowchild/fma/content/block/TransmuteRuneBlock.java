@@ -149,9 +149,6 @@ public class TransmuteRuneBlock extends BaseBlockHorizontal {
 
             // TODO: check transmuate recipes here
             itemHandler.insertItem(0, new ItemStack(Items.COOKIE), false);
-            tile.markDirty();
-            IBlockState state = world.getBlockState(pos);
-            world.notifyBlockUpdate(pos, state, state, 3);
         }
     }
 }

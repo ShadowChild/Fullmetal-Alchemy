@@ -27,9 +27,9 @@ public class TransmuteRuneRenderer extends TileEntitySpecialRenderer<TileEntityT
             RenderHelper.enableStandardItemLighting();
             GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
             GlStateManager.pushMatrix();
-            double offset = Math.sin((te.getWorld().getTotalWorldTime() + partialTicks) / 8) / 4.0;
+            double offset = Math.sin((te.getWorld().getTotalWorldTime() - te.lastChangeTime + partialTicks) / 8) / 4.0;
             GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
-            GlStateManager.rotate((te.getWorld().getTotalWorldTime() + partialTicks) * 4, 0, 1, 0);
+            GlStateManager.rotate((te.getWorld().getTotalWorldTime() - te.lastChangeTime + partialTicks) * 4, 0, 1, 0);
 
             IBakedModel model = Minecraft.getMinecraft().getRenderItem().getItemModelWithOverrides(stack, te.getWorld(), null);
             model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.GROUND, false);

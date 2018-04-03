@@ -2,6 +2,7 @@ package io.github.shadowchild.fma.content.tileentity;
 
 
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -11,7 +12,29 @@ import javax.annotation.Nullable;
 
 public class TileEntityTransmuteRune extends BaseTileEntity {
 
-    public ItemStackHandler inventory = new ItemStackHandler(1);
+    public ItemStackHandler inventory = new ItemStackHandler(1) {
+
+        @Override
+        protected void onContentsChanged(int slot) {
+
+            TileEntity te = world.getTileEntity(pos);
+            if(!world.isRemote && te instanceof TileEntityTransmuteRune) {
+
+                ((TileEntityTransmuteRune)te).lastChangeTime = world.getTotalWorldTime();
+                sendUpdates();
+            }
+        }
+    };
+
+    @Override
+    public void onLoad() {
+
+        if(!world.isRemote) {
+
+            lastChangeTime = world.getTotalWorldTime();
+            sendUpdates();
+        }
+    }
 
     @Override
     public void readFromNBT(NBTTagCompound compound) {
