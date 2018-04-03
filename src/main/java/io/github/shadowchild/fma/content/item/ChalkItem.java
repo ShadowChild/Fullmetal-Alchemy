@@ -32,8 +32,7 @@ public class ChalkItem extends BaseItem {
         Block rune = worldIn.getBlockState(pos).getBlock();
         if(rune instanceof TransmuteRuneBlock) {
 
-            ((TransmuteRuneBlock)rune).doTransmute(worldIn, pos);
-            return EnumActionResult.SUCCESS;
+            return ((TransmuteRuneBlock)rune).doTransmute(worldIn, pos);
         } else {
 
             return placeRune(player, worldIn, pos, hand, facing);

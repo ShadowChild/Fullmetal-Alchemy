@@ -1,0 +1,34 @@
+{
+  "type": "fullmetal:alchemy",
+  "output": {
+    "identifier": "fullmetal:stone_red",
+    "meta": 0,
+    "count": 1
+  },
+  "intput": {
+    "runes": [
+      "EARTH",
+      "FIRE",
+      "WATER",
+      "SULFUR",
+      "MERCURY",
+      "SALT"
+    ],
+    "items": [
+      "minecraft:cookie",
+      "fullmetal:alchemic_chalk",
+      "minecraft:redstone",
+      "minecraft:cookie",
+      "minecraft:redstone",
+      "minecraft:cookie"
+    ],
+    "metadata": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -44,5 +44,7 @@ tile.rune_magnesium.name=Magnesium Rune
 tile.rune_zinc.name=Zinc Rune
 tile.rune_potash.name=Potash Rune
 
+tile.transmute_rune.name=Transmutation Rune
+
 # Damage Source
-death.attack.fake_stone=%1$s learned the value of Souls!
+death.attack.fake_stone=%1$s felt the effects of an alchemic rebound!

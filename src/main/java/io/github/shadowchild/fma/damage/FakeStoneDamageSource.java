@@ -8,6 +8,10 @@ public class FakeStoneDamageSource extends DamageSource {
     public FakeStoneDamageSource() {
 
         super("fake_stone");
+        setDamageAllowedInCreativeMode();
+        setDamageBypassesArmor();
+        setDamageIsAbsolute();
+        setExplosion();
     }
 
     @Override

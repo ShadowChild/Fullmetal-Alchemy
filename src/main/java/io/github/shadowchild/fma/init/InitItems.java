@@ -4,6 +4,7 @@ package io.github.shadowchild.fma.init;
 import baubles.api.BaubleType;
 import io.github.shadowchild.fma.content.base.BaseItem;
 import io.github.shadowchild.fma.content.item.*;
+import io.github.shadowchild.fma.content.item.automail.AutomailItem;
 import net.minecraft.item.Item;
 
 import java.util.ArrayList;
@@ -36,4 +37,7 @@ public class InitItems {
     // Msc Items
     public static final BaseItem chalk = new BaseItem("chalk");
     public static final BaseItem chalk_dust = new BaseItem("chalk_dust");
+
+    // Automail
+    public static final AutomailItem automail = new AutomailItem("automail");
 }

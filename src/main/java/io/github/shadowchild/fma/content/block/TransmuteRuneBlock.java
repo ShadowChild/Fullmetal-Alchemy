@@ -1,6 +1,7 @@
 package io.github.shadowchild.fma.content.block;
 
 
+import io.github.shadowchild.fma.api.FullmetalAPI;
 import io.github.shadowchild.fma.content.base.BaseBlockHorizontal;
 import io.github.shadowchild.fma.content.block.rune.RuneBlock;
 import io.github.shadowchild.fma.content.tileentity.TileEntityTransmuteRune;
@@ -18,6 +19,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -58,7 +60,7 @@ public class TransmuteRuneBlock extends BaseBlockHorizontal {
             circle_pattern = FactoryBlockPattern.start()
                     .aisle(pattern)
                     .where('.', BlockWorldState.hasState(BlockStateMatcher.ANY))
-                    .where('0', BlockWorldState.hasState(BlockMaterialMatcher.forMaterial(InitBlocks.RUNE)))
+                    .where('0', BlockWorldState.hasState(BlockMaterialMatcher.forMaterial(FullmetalAPI.RUNE)))
                     .where('1', BlockWorldState.hasState(BlockStateMatcher.forBlock(InitBlocks.crafting_rune)))
                     .build();
         }
@@ -164,16 +166,29 @@ public class TransmuteRuneBlock extends BaseBlockHorizontal {
     }
 
     // WIP Method
-    public void doTransmute(World world, BlockPos pos) {
+    public EnumActionResult doTransmute(World world, BlockPos pos) {
 
         if(!world.isRemote) {
 
-            TileEntity tile = world.getTileEntity(pos);
-            IItemHandler itemHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH);
+            Block rune = world.getBlockState(pos).getBlock();
+            if(rune instanceof TransmuteRuneBlock) {
 
-            // TODO: check transmuate recipes here
-            itemHandler.insertItem(0, new ItemStack(Items.COOKIE), false);
+                // Attempt to create the circle
+                BlockPattern.PatternHelper helper = ((TransmuteRuneBlock)rune).getOrCreateBlockPattern()
+                        .match(world, pos);
+
+                if(helper != null) {
+
+                    TileEntity tile = world.getTileEntity(pos);
+                    IItemHandler itemHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH);
+
+                    // TODO: check transmuate recipes here
+                    itemHandler.insertItem(0, new ItemStack(Items.COOKIE), false);
+                    return EnumActionResult.SUCCESS;
+                }
+            }
         }
+        return EnumActionResult.FAIL;
     }
 
     private void checkRunes() {
