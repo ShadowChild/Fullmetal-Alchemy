@@ -1,6 +1,8 @@
 package io.github.shadowchild.fma.api;
 
 
+import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
 
 import java.util.ArrayList;
@@ -10,6 +12,8 @@ import java.util.List;
  * The main API class for the Mod Fullmetal Alchemy
  */
 public class FullmetalAPI {
+
+    public static final Material RUNE = new Material(MapColor.GRAY);
 
     /**
      * List for blacklisted Entities.

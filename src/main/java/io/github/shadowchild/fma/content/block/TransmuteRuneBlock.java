@@ -2,6 +2,7 @@ package io.github.shadowchild.fma.content.block;
 
 
 import io.github.shadowchild.fma.content.base.BaseBlockHorizontal;
+import io.github.shadowchild.fma.content.block.rune.RuneBlock;
 import io.github.shadowchild.fma.content.tileentity.TileEntityTransmuteRune;
 import io.github.shadowchild.fma.init.InitBlocks;
 import net.minecraft.block.Block;
@@ -43,25 +44,22 @@ public class TransmuteRuneBlock extends BaseBlockHorizontal {
 
             // Pattern is 9x9 (W x H) rather than 7x9 so that it can be rotated
             // and still create a circle
-            String[] pattern_up = new String[] {
-                    "....v....",
+            String[] pattern = new String[] {
+                    "....0....",
                     ".........",
-                    ".>.....<.",
+                    ".0.....0.",
                     ".........",
-                    "....@....",
+                    "....1....",
                     ".........",
-                    ".>.....<.",
+                    ".0.....0.",
                     ".........",
-                    "....^...."
+                    "....0...."
             };
             circle_pattern = FactoryBlockPattern.start()
-                    .aisle(pattern_up)
+                    .aisle(pattern)
                     .where('.', BlockWorldState.hasState(BlockStateMatcher.ANY))
-                    .where('v', BlockWorldState.hasState(BlockMaterialMatcher.forMaterial(InitBlocks.RUNE)))
-                    .where('>', BlockWorldState.hasState(BlockMaterialMatcher.forMaterial(InitBlocks.RUNE)))
-                    .where('<', BlockWorldState.hasState(BlockMaterialMatcher.forMaterial(InitBlocks.RUNE)))
-                    .where('^', BlockWorldState.hasState(BlockMaterialMatcher.forMaterial(InitBlocks.RUNE)))
-                    .where('@', BlockWorldState.hasState(BlockStateMatcher.forBlock(InitBlocks.crafting_rune)))
+                    .where('0', BlockWorldState.hasState(BlockMaterialMatcher.forMaterial(InitBlocks.RUNE)))
+                    .where('1', BlockWorldState.hasState(BlockStateMatcher.forBlock(InitBlocks.crafting_rune)))
                     .build();
         }
 
@@ -117,10 +115,36 @@ public class TransmuteRuneBlock extends BaseBlockHorizontal {
 
             // Attempt to create the circle
             BlockPattern.PatternHelper helper = ((TransmuteRuneBlock)rune).getOrCreateBlockPattern().match(world, pos);
+
             if(helper != null) {
 
-                // TODO: Add transmuting and effects here
+                TileEntity te = world.getTileEntity(pos);
+
                 world.playBroadcastSound(1038, pos.add(1, 0, 1), 0);
+                BlockPos topLeft = pos.add(-4, 0, -4);
+
+                for(int x = 0; x < 9; x++) {
+
+                    for(int z = 0; z < 9; z++) {
+
+                        // 001000100
+                        // 000000000
+                        // 100010001
+                        // 000000000
+                        // 001000100
+                        // 1 = rune, 0 = nothing
+                        IBlockState[][] blocks = new IBlockState[9][9];
+                        blocks[x][z] = world.getBlockState(topLeft.add(x, 0, z));
+                        if(blocks[x][z].getBlock() instanceof RuneBlock) {
+
+                            if(!world.isRemote && te instanceof TileEntityTransmuteRune) {
+
+                                RuneBlock runeBlock = (RuneBlock)blocks[x][z].getBlock();
+                                ((TileEntityTransmuteRune)te).addRune(runeBlock.getRuneType().ordinal());
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -150,5 +174,10 @@ public class TransmuteRuneBlock extends BaseBlockHorizontal {
             // TODO: check transmuate recipes here
             itemHandler.insertItem(0, new ItemStack(Items.COOKIE), false);
         }
+    }
+
+    private void checkRunes() {
+
+
     }
 }
