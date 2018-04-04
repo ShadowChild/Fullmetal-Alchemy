@@ -30,6 +30,8 @@ public enum RuneType {
     ZINC,
     POTASH;
 
+    // TODO: Cut down
+
     public static RuneType getFromInt(int ordinal) {
 
         return RuneType.values()[ordinal];

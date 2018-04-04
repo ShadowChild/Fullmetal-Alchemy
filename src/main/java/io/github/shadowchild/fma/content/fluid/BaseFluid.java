@@ -10,8 +10,6 @@ import java.awt.*;
 
 public class BaseFluid extends Fluid {
 
-    public static Fluid soul_fluid;
-
     public BaseFluid(String fluidName, Color color) {
 
         super(fluidName, new ResourceLocation(Refs.MOD_ID, "blocks/fluids/" + fluidName + "_still"), new ResourceLocation(Refs.MOD_ID, "blocks/fluids/" + fluidName + "_flowing"), color);
