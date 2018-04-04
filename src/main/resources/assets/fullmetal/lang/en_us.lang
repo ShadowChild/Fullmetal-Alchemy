@@ -2,49 +2,6 @@
 
 # Misc
 itemGroup.tab_fma=Fullmetal Alchemy
-fluid.soul=Soul
 
 # Items
-item.vessel_soul.name=Soul Vessel
-
-item.stone_philosopher.name=Philosopher's Stone
-item.stone_red.name=Red Stone
-
-item.trinket_amulet.name=Alchemical Amulet
-item.trinket_amulet_inscribed.name=Inscribed Amulet
-item.trinket_ring.name=Alchemical Ring
-item.trinket_ring_inscribed.name=Inscribed Ring
-item.trinket_charm.name=Alchemical Charm
-item.trinket_charm_inscribed.name=Inscribed Charm
-
-item.alchemic_chalk.name=Alchemical Chalk
-item.chalk.name=Chalk
-item.chalk_dust.name=Chalk Dust
-
-# Blocks
-tile.rune_air.name=Air Rune
-tile.rune_earth.name=Earth Rune
-tile.rune_fire.name=Fire Rune
-tile.rune_water.name=Water Rune
-tile.rune_sulfur.name=Sulfur Rune
-tile.rune_mercury.name=Mercury Rune
-tile.rune_salt.name=Salt Rune
-tile.rune_copper.name=Copper Rune
-tile.rune_silver.name=Silver Rune
-tile.rune_gold.name=Gold Rune
-tile.rune_iron.name=Iron Rune
-tile.rune_antimony.name=Antimony Rune
-tile.rune_tin.name=Tin Rune
-tile.rune_platinum.name=Platinum Rune
-tile.rune_lead.name=Lead Rune
-tile.rune_arsenic.name=Arsenic Rune
-tile.rune_phosphorus.name=Phosphorus Rune
-tile.rune_bismuth.name=Bismuth Rune
-tile.rune_magnesium.name=Magnesium Rune
-tile.rune_zinc.name=Zinc Rune
-tile.rune_potash.name=Potash Rune
-
-tile.transmute_rune.name=Transmutation Rune
-
-# Damage Source
-death.attack.fake_stone=%1$s felt the effects of an alchemic rebound!
+item.chalk_stick.name=Stick of Chalk

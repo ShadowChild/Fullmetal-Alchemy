@@ -7,7 +7,6 @@ import net.minecraft.nbt.NBTTagCompound;
 public class NBTUtils {
 
     private static final String ITEM_NBT_CONST = "FMA";
-    public static final String SOUL_NBT_TAG = "SOUL_COUNT";
 
     public static NBTTagCompound getModTagCompound(ItemStack stack) {
 
