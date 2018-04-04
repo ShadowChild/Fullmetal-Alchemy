@@ -1,10 +1,11 @@
 package io.github.shadowchild.fma.handler;
 
 
-import io.github.shadowchild.fma.content.tileentity.TileEntityTransmuteRune;
+import io.github.shadowchild.fma.content.base.BaseBlock;
+import io.github.shadowchild.fma.content.base.BaseItem;
+import io.github.shadowchild.fma.content.tileentity.TransmuteRuneTileEntity;
 import io.github.shadowchild.fma.init.InitBlocks;
 import io.github.shadowchild.fma.init.InitItems;
-import io.github.shadowchild.fma.utils.IMeshable;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -28,7 +29,7 @@ public class RegistryHandler {
 
         e.getRegistry().registerAll(InitBlocks.BLOCKS.toArray(new Block[0]));
 
-        GameRegistry.registerTileEntity(TileEntityTransmuteRune.class, InitBlocks.crafting_rune.getRegistryName().toString());
+        GameRegistry.registerTileEntity(TransmuteRuneTileEntity.class, InitBlocks.crafting_rune.getRegistryName().toString());
     }
 
     @SubscribeEvent
@@ -36,17 +37,17 @@ public class RegistryHandler {
 
         for(Item item : InitItems.ITEMS) {
 
-            if(item instanceof IMeshable) {
+            if(item instanceof BaseItem) {
 
-                ((IMeshable) item).registerModels();
+                ((BaseItem) item).registerModels();
             }
         }
 
         for(Block block : InitBlocks.BLOCKS){
 
-            if(block instanceof IMeshable){
+            if(block instanceof BaseBlock){
 
-                ((IMeshable) block).registerModels();
+                ((BaseBlock) block).registerModels();
             }
         }
     }

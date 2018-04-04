@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TileEntityTransmuteRune extends BaseTileEntity {
+public class TransmuteRuneTileEntity extends BaseTileEntity {
 
     private List<Integer> connectedRunes = new ArrayList<>(6);
     public ItemStackHandler inventory = new ItemStackHandler(1) {
@@ -24,11 +24,11 @@ public class TileEntityTransmuteRune extends BaseTileEntity {
         protected void onContentsChanged(int slot) {
 
             TileEntity te = world.getTileEntity(pos);
-            if(!world.isRemote && te instanceof TileEntityTransmuteRune) {
+            if(!world.isRemote && te instanceof TransmuteRuneTileEntity) {
 
-                ((TileEntityTransmuteRune)te).lastChangeTime = world.getTotalWorldTime();
+                ((TransmuteRuneTileEntity)te).lastChangeTime = world.getTotalWorldTime();
                 connectedRunes.forEach(integer -> Fullmetal.LOGGER.info(RuneType.getFromInt(integer)));
-                Fullmetal.LOGGER.info(((TileEntityTransmuteRune)te).connectedRunes);
+                Fullmetal.LOGGER.info(((TransmuteRuneTileEntity)te).connectedRunes);
                 sendUpdates();
             }
         }

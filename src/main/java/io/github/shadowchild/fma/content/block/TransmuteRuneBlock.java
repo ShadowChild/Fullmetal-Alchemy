@@ -4,7 +4,7 @@ package io.github.shadowchild.fma.content.block;
 import io.github.shadowchild.fma.api.FullmetalAPI;
 import io.github.shadowchild.fma.content.base.BaseBlockHorizontal;
 import io.github.shadowchild.fma.content.block.rune.RuneBlock;
-import io.github.shadowchild.fma.content.tileentity.TileEntityTransmuteRune;
+import io.github.shadowchild.fma.content.tileentity.TransmuteRuneTileEntity;
 import io.github.shadowchild.fma.init.InitBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -104,7 +104,7 @@ public class TransmuteRuneBlock extends BaseBlockHorizontal {
     @Override
     public TileEntity createTileEntity(World world, IBlockState state) {
 
-        return new TileEntityTransmuteRune();
+        return new TransmuteRuneTileEntity();
     }
 
     @Override
@@ -139,10 +139,10 @@ public class TransmuteRuneBlock extends BaseBlockHorizontal {
                         blocks[x][z] = world.getBlockState(topLeft.add(x, 0, z));
                         if(blocks[x][z].getBlock() instanceof RuneBlock) {
 
-                            if(!world.isRemote && te instanceof TileEntityTransmuteRune) {
+                            if(!world.isRemote && te instanceof TransmuteRuneTileEntity) {
 
                                 RuneBlock runeBlock = (RuneBlock)blocks[x][z].getBlock();
-                                ((TileEntityTransmuteRune)te).addRune(runeBlock.getRuneType().ordinal());
+                                ((TransmuteRuneTileEntity)te).addRune(runeBlock.getRuneType().ordinal());
                             }
                         }
                     }

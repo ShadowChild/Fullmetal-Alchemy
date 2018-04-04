@@ -3,11 +3,10 @@ package io.github.shadowchild.fma.content.base;
 
 import io.github.shadowchild.fma.Fullmetal;
 import io.github.shadowchild.fma.init.InitItems;
-import io.github.shadowchild.fma.utils.IMeshable;
 import io.github.shadowchild.fma.utils.Refs;
 import net.minecraft.item.Item;
 
-public class BaseItem extends Item implements IMeshable {
+public class BaseItem extends Item {
 
     public BaseItem(String label) {
 
@@ -17,7 +16,6 @@ public class BaseItem extends Item implements IMeshable {
         InitItems.ITEMS.add(this);
     }
 
-    @Override
     public void registerModels() {
 
         Fullmetal.proxy.registerItemRenderer(this, 0, "inventory");

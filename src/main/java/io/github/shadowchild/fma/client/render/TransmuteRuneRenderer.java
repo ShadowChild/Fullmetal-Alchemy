@@ -1,7 +1,7 @@
 package io.github.shadowchild.fma.client.render;
 
 
-import io.github.shadowchild.fma.content.tileentity.TileEntityTransmuteRune;
+import io.github.shadowchild.fma.content.tileentity.TransmuteRuneTileEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
@@ -13,10 +13,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.ForgeHooksClient;
 import org.lwjgl.opengl.GL11;
 
-public class TransmuteRuneRenderer extends TileEntitySpecialRenderer<TileEntityTransmuteRune> {
+public class TransmuteRuneRenderer extends TileEntitySpecialRenderer<TransmuteRuneTileEntity> {
 
     @Override
-    public void render(TileEntityTransmuteRune te, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
+    public void render(TransmuteRuneTileEntity te, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
 
         ItemStack stack = te.inventory.getStackInSlot(0);
         if (!stack.isEmpty()) {

@@ -3,7 +3,7 @@ package io.github.shadowchild.fma.client;
 
 import io.github.shadowchild.fma.Proxy;
 import io.github.shadowchild.fma.client.render.TransmuteRuneRenderer;
-import io.github.shadowchild.fma.content.tileentity.TileEntityTransmuteRune;
+import io.github.shadowchild.fma.content.tileentity.TransmuteRuneTileEntity;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
@@ -41,6 +41,6 @@ public class ClientProxy extends Proxy {
     @Override
     public void initRenders() {
 
-        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTransmuteRune.class, new TransmuteRuneRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(TransmuteRuneTileEntity.class, new TransmuteRuneRenderer());
     }
 }

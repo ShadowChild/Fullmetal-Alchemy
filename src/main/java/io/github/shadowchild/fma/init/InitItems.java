@@ -15,7 +15,7 @@ public class InitItems {
     public static final List<Item> ITEMS = new ArrayList<>();
 
     // Vessels
-    public static final BaseItem vessel_soul = new SoulVesselItem("vessel_soul");
+    public static final SoulVesselItem vessel_soul = new SoulVesselItem("vessel_soul");
 
     // Stones
     public static final PStoneItem stone_red = new PStoneItem("stone_red", true);
