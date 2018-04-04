@@ -1,7 +1,0 @@
-{
-  "parent": "fullmetal:block/rune",
-  "textures": {
-    "particle": "fullmetal:blocks/rune_crafting",
-    "rune": "fullmetal:blocks/rune_crafting"
-  }
-}
