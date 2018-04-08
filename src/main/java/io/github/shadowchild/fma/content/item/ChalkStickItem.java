@@ -1,6 +1,7 @@
 package io.github.shadowchild.fma.content.item;
 
 
+import io.github.shadowchild.fma.Fullmetal;
 import io.github.shadowchild.fma.content.base.BaseItem;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -36,7 +37,20 @@ public class ChalkStickItem extends BaseItem {
     @Override
     public void onUsingTick(ItemStack stack, EntityLivingBase player, int count) {
 
-        super.onUsingTick(stack, player, count);
+        // We only want it to call on the client
+        // Proxy still used in case of ClassNotFound Exceptions
+        if(player.world.isRemote)
+            Fullmetal.proxy.updateCircleDrawing(stack, player, count);
+    }
+
+    @Override
+    public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
+
+        // Try to recognise circle
+
+        // Clear points cache
+        Fullmetal.proxy.clearCircleCache();
+        return super.onItemUseFinish(stack, worldIn, entityLiving);
     }
 
     @Override

@@ -25,17 +25,19 @@ public class BaseBlockHorizontal extends BaseBlock {
     @Override
     public void onBlockPlacedBy(World world, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
 
-        EnumFacing facing = placer.getHorizontalFacing();
+        EnumFacing facing = placer.getHorizontalFacing().getOpposite();
         world.setBlockState(pos, state.withProperty(FACING, facing), 2);
     }
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
+
         return getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta & 3));
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
+
         return state.getValue(FACING).getHorizontalIndex();
     }
 
