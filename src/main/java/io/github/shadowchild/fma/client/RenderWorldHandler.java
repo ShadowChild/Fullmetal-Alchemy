@@ -36,13 +36,14 @@ public class RenderWorldHandler {
         double yDif = player.lastTickPosY + (player.posY - player.lastTickPosY) * e.getPartialTicks();
         double zDif = player.lastTickPosZ + (player.posZ - player.lastTickPosZ) * e.getPartialTicks();
 
+        GlStateManager.pushMatrix();
+
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableTexture2D();
         GlStateManager.disableLighting();
         GlStateManager.disableDepth();
 
-        GlStateManager.pushMatrix();
 
         // Move to draw position and orientation.
         GlStateManager.translate(positionHit.getX() - xDif + 0.5, positionHit.getY() - yDif + 0.5, positionHit.getZ() - zDif + 0.5);
@@ -76,15 +77,17 @@ public class RenderWorldHandler {
             builder.pos(p.x, p.y, 0).endVertex();
         tes.draw();
 
-        GlStateManager.popMatrix();
 
         GlStateManager.enableDepth();
         GlStateManager.enableLighting();
         GlStateManager.enableTexture2D();
         GlStateManager.disableBlend();
+
+        GlStateManager.popMatrix();
     }
 
     public static void clearCache() {
 
+        circlePointsList = null;
     }
 }

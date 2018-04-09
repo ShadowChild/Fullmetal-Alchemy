@@ -37,20 +37,13 @@ public class ChalkStickItem extends BaseItem {
     @Override
     public void onUsingTick(ItemStack stack, EntityLivingBase player, int count) {
 
-        // We only want it to call on the client
-        // Proxy still used in case of ClassNotFound Exceptions
-        if(player.world.isRemote)
-            Fullmetal.proxy.updateCircleDrawing(stack, player, count);
+         Fullmetal.proxy.updateCircleDrawing(stack, player, count);
     }
 
     @Override
-    public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
+    public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft) {
 
-        // Try to recognise circle
-
-        // Clear points cache
         Fullmetal.proxy.clearCircleCache();
-        return super.onItemUseFinish(stack, worldIn, entityLiving);
     }
 
     @Override
