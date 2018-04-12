@@ -1,16 +1,19 @@
 package io.github.shadowchild.fma.init;
 
 
-import io.github.shadowchild.fma.content.base.BaseItem;
 import io.github.shadowchild.fma.content.item.ChalkStickItem;
+import io.github.shadowchild.fma.utils.Refs;
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import java.util.ArrayList;
-import java.util.List;
-
+@GameRegistry.ObjectHolder(Refs.MOD_ID)
 public class InitItems {
 
-    public static final List<Item> ITEMS = new ArrayList<>();
+    @GameRegistry.ObjectHolder("chalk_stick")
+    public static final Item chalk_stick = null;
 
-    public static final BaseItem chalk_stick = new ChalkStickItem("chalk_stick");
+    public static void init() {
+
+        Refs.ITEMS.add(new ChalkStickItem("chalk_stick"));
+    }
 }

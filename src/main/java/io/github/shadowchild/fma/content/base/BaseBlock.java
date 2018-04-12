@@ -2,7 +2,6 @@ package io.github.shadowchild.fma.content.base;
 
 
 import io.github.shadowchild.fma.Fullmetal;
-import io.github.shadowchild.fma.init.InitBlocks;
 import io.github.shadowchild.fma.utils.Refs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -17,8 +16,7 @@ public class BaseBlock extends Block {
         this.setUnlocalizedName(label);
         this.setRegistryName(label);
         this.setCreativeTab(Refs.TAB);
-        InitBlocks.BLOCKS.add(this);
-        InitBlocks.ITEM_BLOCKS.add(createItemBlock());
+        Refs.ITEM_BLOCKS.add(createItemBlock());
     }
 
     public Item createItemBlock() {

@@ -1,18 +1,19 @@
 package io.github.shadowchild.fma.init;
 
 
+import io.github.shadowchild.fma.content.block.AlchemyBenchBlock;
+import io.github.shadowchild.fma.utils.Refs;
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import java.util.ArrayList;
-import java.util.List;
-
+@GameRegistry.ObjectHolder(Refs.MOD_ID)
 public class InitBlocks {
 
-    public static final List<Block> BLOCKS = new ArrayList<>();
-    public static final List<Item> ITEM_BLOCKS = new ArrayList<>();
+    @GameRegistry.ObjectHolder("alchemy_bench")
+    public static final Block alchemy_bench = null;
 
-    // Alchemic Blocks
+    public static void init() {
 
-    // Runes
+        Refs.BLOCKS.add(new AlchemyBenchBlock("alchemy_bench"));
+    }
 }

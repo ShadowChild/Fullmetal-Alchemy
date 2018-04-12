@@ -1,6 +1,8 @@
 package io.github.shadowchild.fma;
 
 
+import io.github.shadowchild.fma.init.InitBlocks;
+import io.github.shadowchild.fma.init.InitItems;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -12,6 +14,8 @@ public class Proxy {
 
     public void preInit(FMLPreInitializationEvent e) {
 
+        InitItems.init();
+        InitBlocks.init();
     }
 
     public void init(FMLInitializationEvent e) {
